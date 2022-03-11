@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.min.css" />
     <title>Responsive Hospital Website</title>
+    <!-- Minified CSS -->
+    <link rel="stylesheet" href="css/style.min.css" />
+    <!-- Boxicons CDN
+     -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
-    <button class="btn">hello world!</button>
+    <nav>
+      <div class="container">
+        <a href="h3" class="nav__logo">EGATOR</a>
+
+        <ul class="nav__items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#specialists">Specialists</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#appointment">Make Appointment</a></li>
+        </ul>
+
+        <button id="open__nav-btn"><i class="bx bx-menu"></i></button>
+        <button id="close__nav-btn"><i class="bx bx-x"></i></button>
+      </div>
+    </nav>
   </body>
 </html>
