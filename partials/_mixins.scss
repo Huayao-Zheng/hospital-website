@@ -15,3 +15,8 @@
     box-shadow: 0 1rem 1.6rem rgba(var.$black-color, 0.15);
   }
 }
+
+@mixin gradientBackground {
+  background: linear-gradient(135deg, var.$primary-color, var.$primary-color-variant);
+  color: var.$white-color;
+}
