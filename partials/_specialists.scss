@@ -22,6 +22,12 @@
           left: 0;
           border-radius: 1rem;
         }
+
+        .specialist__socials,
+        .specialist__whatsapp {
+          opacity: 1;
+          visibility: visible;
+        }
       }
 
       .specialist__image {
@@ -88,6 +94,24 @@
         visibility: hidden;
         transition: all 1s 0.4s ease;
       }
+    }
+  }
+}
+
+/* ========================== Media Queries (Medium Devices) ========================== */
+@media screen and (max-width: 1024px) {
+  #specialists {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+/* ========================== Media Queries (Small Devices) ========================== */
+@media screen and (max-width: 600px) {
+  #specialists {
+    .container {
+      grid-template-columns: 1fr;
     }
   }
 }
