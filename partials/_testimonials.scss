@@ -1,0 +1,51 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+.swiper {
+  width: var.$container-lg;
+
+  .swiper-wrapper {
+    // push swiper pagination down
+    margin-bottom: 4rem;
+
+    .swiper-slide {
+      @include mix.gradientBackground;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      font-size: 0.9rem;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      .patient {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &__avatar {
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// override Swiper default color
+.swiper-pagination-bullet-active {
+  background: var.$primary-color;
+}
+
+/* ========================== Media Queries (Small Devices) ========================== */
+@media screen and (max-width: 600px) {
+  .swiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
