@@ -14,7 +14,7 @@ closeNavBtn.addEventListener('click', () => {
   openNavBtn.style.display = 'inline-block';
 });
 
-// Testimonals (Swiper.js)
+// Testimonals (Swiper.js).
 var swiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
   spaceBetween: 30,
