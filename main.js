@@ -1,7 +1,8 @@
 const openNavBtn = document.getElementById('open__nav-btn');
 const closeNavBtn = document.getElementById('close__nav-btn');
+const nav = document.querySelector('nav');
 const navList = document.querySelector('.nav__items');
-const navItems = document.querySelectorAll('.nav__items li a');
+const navLinks = document.querySelectorAll('.nav__items li a');
 
 function openNav() {
   navList.style.display = 'flex';
@@ -15,10 +16,10 @@ function closeNav() {
   openNavBtn.style.display = 'inline-block';
 }
 
-function handleEventListener(addOrRemove, items, fn) {
+function handleEventListener(addOrRemove, links, fn) {
   if (addOrRemove === 'add' || addOrRemove === 'remove') {
-    items.forEach((item) => {
-      item[`${addOrRemove}EventListener`]('click', fn);
+    links.forEach((link) => {
+      link[`${addOrRemove}EventListener`]('click', fn);
     });
   }
 }
@@ -28,16 +29,21 @@ closeNavBtn.addEventListener('click', closeNav);
 
 //(mobile and tablet screen) close nav menu when a menu item is clicked
 if (window.innerWidth <= 1024) {
-  handleEventListener('add', navItems, closeNav);
+  handleEventListener('add', navLinks, closeNav);
 }
 
 // handle resizing,
 window.addEventListener('resize', () => {
   if (window.innerWidth <= 1024) {
-    handleEventListener('add', navItems, closeNav);
+    handleEventListener('add', navLinks, closeNav);
   } else {
-    handleEventListener('remove', navItems, closeNav);
+    handleEventListener('remove', navLinks, closeNav);
   }
+});
+
+// change navbar styles on scroll
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('window-scroll', window.scrollY > 0);
 });
 
 // Testimonals (Swiper.js).

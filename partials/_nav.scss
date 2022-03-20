@@ -11,6 +11,22 @@ nav {
   place-items: center;
   box-shadow: 0 1rem 1rem rgba(var.$black-color, 0.1);
   @include mix.gradientBackground;
+  transition: background 0.4s ease;
+
+  /* navbar styles on scroll using JS */
+  &.window-scroll {
+    background: var.$white-color;
+
+    .container {
+      a:not([class='btn']),
+      .nav__logo h3,
+      button {
+        color: var.$black-color;
+        transition: color 0.4s ease;
+      }
+    }
+  }
+  /* on scroll styles END */
 
   .container {
     display: flex;
@@ -57,6 +73,16 @@ nav {
 
 @media screen and (max-width: 1024px) {
   nav {
+    /* navbar styles on scroll using JS */
+    &.window-scroll {
+      .container {
+        a:not([class='btn']) {
+          color: var.$white-color;
+        }
+      }
+    }
+    /* on scroll styles END */
+
     .container {
       button {
         display: inline-block;
